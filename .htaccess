@@ -1,0 +1,17 @@
+# Matikan daftar isi folder
+Options -Indexes
+
+# Berkas internal tidak boleh dibuka langsung dari peramban
+<FilesMatch "^(koneksi|koneksi\.contoh|fungsi|midtrans|pesan|halaman_error)\.php$">
+    Require all denied
+</FilesMatch>
+<FilesMatch "^(us|ad|sa)_(header|footer|beranda|kartu_menu)\.php$">
+    Require all denied
+</FilesMatch>
+<FilesMatch "^(cek_login|cek_admin|cek_admin_json|ambil_pesanan)\.php$">
+    Require all denied
+</FilesMatch>
+
+# Halaman kesalahan (sesuaikan nama folder di htdocs)
+ErrorDocument 403 /Warung_Kopi_Agung/403.php
+ErrorDocument 404 /Warung_Kopi_Agung/404.php
