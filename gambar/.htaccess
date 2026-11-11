@@ -1,0 +1,4 @@
+# Folder gambar tidak boleh menjalankan PHP
+<FilesMatch "\.(php|phtml|phar)$">
+    Require all denied
+</FilesMatch>
