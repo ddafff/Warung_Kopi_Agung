@@ -32,7 +32,7 @@ function buat_qris($order_id, $total, &$pesan_error = null) {
 
     $hasil = kirim_midtrans('POST', '/v2/charge', [
         'payment_type'        => 'qris',
-        'transaction_details' => ['order_id' => 'KOPI-' . $order_id, 'gross_amount' => $total],
+        'transaction_details' => ['order_id' => 'KOPI-' . $order_id, 'gross_amount' => $total], 
         'qris'                => ['acquirer' => 'gopay'],
     ]);
 
