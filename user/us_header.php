@@ -21,8 +21,8 @@ $kelas_isi  = $kelas_isi ?? 'kontainer';
 <header class="kepala-situs">
     <div class="kontainer kepala-isi">
         <a class="merek" href="us_index.php">
-            <?php if (file_exists('../gambar/logo.png')): ?>
-                <img class="logo-bulat" src="../gambar/logo.png" alt="Logo">
+            <?php if (file_exists('../gambar/logo_warder.jpeg')): ?>
+                <img class="logo-bulat" src="../gambar/logo_warder.jpeg" alt="Logo">
             <?php else: ?>
                 <span class="logo-bulat"><i class="fa-solid fa-mug-hot"></i></span>
             <?php endif; ?>

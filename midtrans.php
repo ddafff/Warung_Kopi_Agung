@@ -25,8 +25,8 @@ function kirim_midtrans($metode, $alamat, $data = null) {
 
 // Buat QRIS untuk satu pesanan. Hasil: ['qr_string' => ..., 'expiry_time' => ...] atau false
 function buat_qris($order_id, $total, &$pesan_error = null) {
-    if (MIDTRANS_SERVER_KEY === 'ISI_SERVER_KEY_SANDBOX_ANDA' || trim(MIDTRANS_SERVER_KEY) === '') {
-        $pesan_error = 'MIDTRANS_SERVER_KEY di koneksi.php masih teks bawaan. Pastikan Anda sudah mengedit dan menyimpan file koneksi.php (Ctrl + S).';
+    if (MIDTRANS_SERVER_KEY === 'M247410948-DEFAULT-PAYMENT-CLIENT' || trim(MIDTRANS_SERVER_KEY) === '') {
+        $pesan_error = 'Gagal mengambil server Midtrans.';
         return false;
     }
 

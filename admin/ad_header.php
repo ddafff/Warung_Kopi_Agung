@@ -28,8 +28,8 @@ $ke_sa    = $ke_sa ?? '../superadmin/';
         <div class="merek">
             <button class="tombol-menu" type="button" onclick="bukaMenu()"><i class="fa-solid fa-bars"></i></button>
             <a class="merek" href="<?= $ke_admin ?>pesanan_masuk.php">
-                <?php if (file_exists('../gambar/logo.png')): ?>
-                    <img class="logo-bulat" src="../gambar/logo.png" alt="Logo">
+                <?php if (file_exists('../gambar/logo_warder.jpeg')): ?>
+                    <img class="logo-bulat" src="../gambar/logo_warder.jpeg" alt="Logo">
                 <?php else: ?>
                     <span class="logo-bulat"><i class="fa-solid fa-mug-hot"></i></span>
                 <?php endif; ?>

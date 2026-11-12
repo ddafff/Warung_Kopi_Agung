@@ -4,7 +4,7 @@
 
 $error = '';
 
-if (!preg_match('/^[A-Za-z0-9_.]{3,30}$/', $username)) {
+if (!preg_match('/^[A-Za-z0-9_. ]{3,30}$/', $username)) {
     $error = 'Username 3-30 karakter, hanya huruf, angka, titik, dan garis bawah.';
 } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     $error = 'Format email tidak valid.';
