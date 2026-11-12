@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+# Warung_Kopi_Agung
+=======
+>>>>>>> d33efa4
 # Warung Kopi Agung — Sistem Pemesanan QR Code
 
 PHP native + MySQL (PDO) + HTML/CSS/JS biasa. Pembayaran QRIS memakai Midtrans **Sandbox**.
@@ -132,3 +138,7 @@ Kegiatan Admin (pesanan masuk + cek QRIS, konfirmasi tunai, antrean dapur, cetak
 - Admin dan Superadmin memakai menu samping. Fitur gambar Stitch yang tidak ada di rancangan dan diagram tidak dibuat (Tambah Pengguna, Ekspor/Unduh Excel, pajak, barcode, kapasitas kursi dan area meja, kartu "total pengunjung", dan lain-lain).
 - Hapus menu: diagram menulis cabang "Ya" dan "Tidak" tertukar. Kode mengikuti aturan rancangan: menu yang pernah dipesan **tidak boleh** dihapus, menu yang belum pernah dipesan baru ditanya "Hapus menu ini?".
 - Kode sengaja dibuat sederhana: tanpa token CSRF dan tanpa fungsi bantu rumit. Keamanan dasar tetap ada: kueri memakai `prepare()`, teks ditampilkan dengan `htmlspecialchars()`, sandi memakai `password_hash()`, dan akses dibatasi per peran.
+<<<<<<< HEAD
+=======
+>>>>>>> 643be15 (sisa satu fitur, next gweh push)
+>>>>>>> d33efa4

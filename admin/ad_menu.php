@@ -16,11 +16,19 @@
             <a class="menu-samping-tautan <?= $menu_aktif == 'laporan' ? 'aktif' : '' ?>" href="<?= $ke_sa ?>laporan_penjualan.php"><i class="fa-solid fa-file-invoice-dollar"></i> Laporan Penjualan</a>
             <a class="menu-samping-tautan <?= $menu_aktif == 'menu' ? 'aktif' : '' ?>" href="<?= $ke_sa ?>kelola_menu.php"><i class="fa-solid fa-mug-saucer"></i> Kelola Menu</a>
             <a class="menu-samping-tautan <?= $menu_aktif == 'meja' ? 'aktif' : '' ?>" href="<?= $ke_sa ?>kelola_meja.php"><i class="fa-solid fa-table-cells"></i> Kelola Meja</a>
+<<<<<<< HEAD
+=======
+            <a class="menu-samping-tautan <?= $menu_aktif == 'admin' ? 'aktif' : '' ?>" href="<?= $ke_sa ?>kelola_admin.php"><i class="fa-solid fa-user-gear"></i> Kelola Admin</a>
+>>>>>>> d33efa4
         <?php endif; ?>
 
         <div class="menu-samping-bawah">
             <div class="menu-samping-pemisah"></div>
             <a class="menu-samping-tautan" href="../user/us_index.php"><i class="fa-solid fa-store"></i> Lihat Menu</a>
             <a class="menu-samping-tautan" href="../user/logout.php"><i class="fa-solid fa-right-from-bracket"></i> Keluar</a>
+<<<<<<< HEAD
         </div>
+=======
+        </div> 
+>>>>>>> d33efa4
     </aside>
