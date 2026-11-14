@@ -33,8 +33,9 @@ if (!isset($_SESSION['nomor_meja'])) {
 }
 
 // Tombol di checkout bernilai "idmenu:aksi" (contoh 12:tambah). Tombol + di menu hanya mengirim menu_id.
-if (isset($_POST['ubah'])) {
-    list($menu_id, $aksi) = explode(':', $_POST['ubah']);
+$bagian = explode(':', $_POST['ubah'] ?? '');
+if (isset($_POST['ubah']) && count($bagian) == 2) {
+    list($menu_id, $aksi) = $bagian;
 } else {
     $menu_id = $_POST['menu_id'] ?? 0;
     $aksi = 'tambah';
@@ -74,3 +75,4 @@ if ($jumlah <= 0) {
 header('Location: ' . $kembali);
 exit;
 ?>
+

@@ -7,6 +7,13 @@ $boleh = isset($_SESSION['user_id'])
       && ($_SESSION['role'] == 'admin' || $_SESSION['role'] == 'superadmin')
       && time() - ($_SESSION['aktivitas_terakhir'] ?? 0) <= 1800;
 
+// Akun yang sudah dihapus tidak boleh lagi mengambil data
+if ($boleh) {
+    $stmt = $pdo->prepare("SELECT id FROM users WHERE id = ?");
+    $stmt->execute([$_SESSION['user_id']]);
+    $boleh = (bool)$stmt->fetch();
+}
+
 if (!$boleh) {
     http_response_code(403);
     echo json_encode(['ok' => false, 'pesan' => 'Akses ditolak']);
