@@ -15,7 +15,13 @@ $judul = 'Status Pesanan';
 $kelas_isi = 'kontainer-sempit';
 include 'us_header.php';
 ?>
-<a class="tombol tombol-sekunder tombol-kecil" href="riwayat_pesanan.php"><i class="fa-solid fa-arrow-left"></i> Riwayat</a>
+<?php if ($pesanan['metode_pembayaran'] == 'qris'): ?>
+    <a class="tombol tombol-sekunder tombol-kecil" href="bayar_qris.php?id=<?= $pesanan['id'] ?>"><i class="fa-solid fa-arrow-left"></i> Kembali ke QRIS</a>
+<?php elseif ($pesanan['metode_pembayaran'] == 'cash' && $pesanan['status_pembayaran'] == 'pending_cash'): ?>
+    <a class="tombol tombol-sekunder tombol-kecil" href="menunggu_tunai.php?id=<?= $pesanan['id'] ?>"><i class="fa-solid fa-arrow-left"></i> Pembayaran Tunai</a>
+<?php else: ?>
+    <a class="tombol tombol-sekunder tombol-kecil" href="riwayat_pesanan.php"><i class="fa-solid fa-arrow-left"></i> Riwayat</a>
+<?php endif; ?>
 <h1 class="judul-halaman" style="margin-top:12px">Status Pesanan</h1>
 <div id="pemantau" data-id="<?= $pesanan['id'] ?>" data-mode="status" data-selesai="<?= $selesai ? 1 : 0 ?>"></div>
 
@@ -54,5 +60,8 @@ include 'us_header.php';
 </section>
 
 <p class="pesan-koneksi" id="pesan-koneksi"></p>
+<?php if ($pesanan['metode_pembayaran'] == 'qris' && $pesanan['status_pembayaran'] == 'unpaid' && $pesanan['status_pesanan'] == 'pending'): ?>
+    <a class="tombol tombol-utama tombol-penuh" href="bayar_qris.php?id=<?= $pesanan['id'] ?>" style="margin-bottom:10px;"><i class="fa-solid fa-qrcode"></i> Lanjutkan Pembayaran QRIS</a>
+<?php endif; ?>
 <a class="tombol tombol-sekunder tombol-penuh" href="riwayat_pesanan.php">Lihat Riwayat Pesanan</a>
 <?php include 'us_footer.php'; ?>

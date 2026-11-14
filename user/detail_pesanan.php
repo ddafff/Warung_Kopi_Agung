@@ -52,6 +52,9 @@ include 'us_header.php';
     <div class="baris-rincian"><strong>Total</strong><span class="angka-total"><?= rupiah($pesanan['total_harga']) ?></span></div>
 </section>
 
+<?php if ($pesanan['metode_pembayaran'] == 'qris' && $pesanan['status_pembayaran'] == 'unpaid' && $pesanan['status_pesanan'] == 'pending'): ?>
+    <a class="tombol tombol-utama tombol-penuh" href="bayar_qris.php?id=<?= $pesanan['id'] ?>" style="margin-bottom:10px;"><i class="fa-solid fa-qrcode"></i> Lanjutkan Pembayaran QRIS</a>
+<?php endif; ?>
 <?php if ($pesanan['status_pesanan'] == 'pending' || $pesanan['status_pesanan'] == 'dapur'): ?>
     <a class="tombol tombol-utama tombol-penuh" href="status_pesanan.php?id=<?= $pesanan['id'] ?>"><i class="fa-solid fa-rotate"></i> Pantau Status Pesanan</a>
 <?php endif; ?>

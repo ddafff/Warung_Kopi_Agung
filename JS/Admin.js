@@ -260,6 +260,24 @@ function gambarGrafik(idCanvas, jenis, warna) {
     var kanvas = document.getElementById(idCanvas);
     if (!kanvas || typeof Chart === 'undefined') return;
 
+    var opsiY = {
+        beginAtZero: true
+    };
+
+    if (idCanvas === 'grafik-jam') {
+        opsiY.ticks = {
+            stepSize: 1,
+            precision: 0,
+            callback: function (nilai) {
+                if (Number.isInteger(nilai)) return nilai;
+            }
+        };
+    } else {
+        opsiY.ticks = {
+            precision: 0
+        };
+    }
+
     new Chart(kanvas, {
         type: jenis,
         data: {
@@ -269,14 +287,16 @@ function gambarGrafik(idCanvas, jenis, warna) {
                 backgroundColor: warna,
                 borderColor: warna,
                 borderWidth: 2,
-                tension: 0.3
+                tension: 0.3 
             }]
         },
         options: {
             responsive: true,
             maintainAspectRatio: false,
             plugins: { legend: { display: false } },
-            scales: { y: { beginAtZero: true } }
+            scales: {
+                y: opsiY
+            }
         }
     });
 }

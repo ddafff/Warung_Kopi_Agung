@@ -3,6 +3,6 @@
     </main>
 </div>
 
-<script src="../JS/Admin.js"></script>
+<script src="../JS/Admin.js?v=<?= file_exists(__DIR__ . '/../JS/Admin.js') ? filemtime(__DIR__ . '/../JS/Admin.js') : time() ?>"></script>
 </body>
 </html>
