@@ -94,7 +94,7 @@ include 'us_header.php';
                       placeholder="Contoh: Es dipisah, pedas sedang..."><?= htmlspecialchars($catatan) ?></textarea>
             <span class="hitungan-catatan"><span id="hitung-catatan"><?= mb_strlen($catatan) ?></span>/200</span>
         </div>
-    </section>
+    </section> 
 
     <section class="kartu rincian-biaya">
         <div class="baris-total"><span>Total</span><span class="harga-total"><?= rupiah($total) ?></span></div>

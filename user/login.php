@@ -65,7 +65,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <main class="halaman-masuk">
     <div class="kotak-masuk">
         <div class="merek-tengah">
-            <span class="logo-bulat"><i class="fa-solid fa-mug-hot"></i></span>
+           
+                <img class="logo-bulat" src="../gambar/logo_warder.jpeg" alt="Logo">
+            
             <span class="nama-merek">WARUNG KOPI AGUNG</span>
             <span class="teks-pendukung">Pesan dari meja, tanpa antre</span>
         </div>
